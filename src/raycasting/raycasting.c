@@ -40,7 +40,7 @@ t_ray
 	t_f_coordinat			ray_h;
 	t_f_coordinat			distances;
 
-	if (ray_angle == M_PI || ray_angle == 0)
+	if (ray_angle == (float)M_PI || ray_angle == 0)
 	{
 		ray_h.x = program->player.coordinat.x;
 		ray_h.y = program->player.coordinat.y;
