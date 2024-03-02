@@ -6,7 +6,7 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 11:42:58 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/12 20:25:45 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:47:39 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int		find_first_ch(char *str);
 //2
 char	*substr_without_space(char *s1);
 int		is_rgb_format(char *s);
+int		check_height_map(void);
 //map checker utils |1|2|
 //1
 int		set_map(int fd, t_map *map);

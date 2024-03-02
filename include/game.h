@@ -6,14 +6,12 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:16:55 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/13 00:22:07 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:40:32 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_H
 # define GAME_H
-# define SCREEN_WIDHT 1024
-# define SCREEN_HEIGHT 1080
 
 # include "cub3d_s.h"
 

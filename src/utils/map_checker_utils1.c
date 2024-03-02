@@ -6,7 +6,7 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:11:12 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/12 20:36:47 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:46:21 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	set_map(int fd, t_map *map)
 		return (1);
 	while (tmp)
 	{
+		if (ft_strlen(tmp) > 50 || check_height_map())
+			return (free(tmp), free(m), ft_printf("MAP IS TOO BIG!\n"), 1);
 		m = ft_strjoin_free(m, tmp);
 		if (!m)
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:41:09 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/12 20:21:19 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/03/02 20:37:11 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void
 	check_outside_map(char **map, int x, int y, t_map *m)
 {
 	if (checker(map, x, y))
-		error_massage("Duvarlar 1 degil!\n", m, -1);
+		error_massage("ALL WALLS ARE NOT ONE!\n", m, -1);
 	map[x][y] = '.';
 	if (map[x + 1][y] == ' ')
 		check_outside_map(map, x + 1, y, m);

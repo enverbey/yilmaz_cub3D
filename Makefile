@@ -30,7 +30,6 @@ SRC				=	./src/checker/check_arg.c \
 					./src/utils/value_checker_utils1.c \
 					./src/utils/value_checker_utils2.c
 
-
 MAIN			=	./src/main/main.c \
 					./src/main/render.c \
 
@@ -38,25 +37,33 @@ MAIN_BONUS		=	./src/bonus/main_bonus.c \
 					./src/bonus/bonus_map.c \
 					./src/bonus/render_bonus.c
 
+OBJ				=	$(SRC:.c=.o)
+OBJ_MAIN		=	$(MAIN:.c=.o)
+OBJ_BONUS		=	$(MAIN_BONUS:.c=.o)
+
 MINILIBX_PATH	=	./minilibx
 LIBFT_PATH		=	./libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-all:    			$(NAME)
-bonus:				$(NAME_BONUS)
+all:    			mlx $(LIBFT) $(NAME)
+bonus:				mlx $(LIBFT) $(NAME_BONUS)
 
-$(NAME):			$(LIBFT) mlx
-					$(CC) $(FLAGS) -o $(NAME) $(SRC) $(LIBFT) $(MAIN) -framework OpenGL -framework AppKit -L$(MINILIBX_PATH) -lmlx
-$(NAME_BONUS):		$(LIBFT) mlx
-					$(CC) $(FLAGS) -o $(NAME_BONUS) $(SRC) $(LIBFT) $(MAIN_BONUS) -framework OpenGL -framework AppKit -L$(MINILIBX_PATH) -lmlx
+$(NAME):			$(OBJ) $(OBJ_MAIN)
+					$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(OBJ_MAIN) -framework OpenGL -framework AppKit -L$(MINILIBX_PATH) -lmlx
+
+$(NAME_BONUS):		$(OBJ) $(OBJ_BONUS)
+					$(CC) $(FLAGS) -o $(NAME_BONUS) $(OBJ) $(LIBFT) $(OBJ_BONUS) -framework OpenGL -framework AppKit -L$(MINILIBX_PATH) -lmlx
 $(LIBFT):
 					@make -C $(LIBFT_PATH) all
 mlx:
-					make -C $(MINILIBX_PATH) all
+					@make -C $(MINILIBX_PATH) all
 
 exe:				$(NAME)
 					./so_long
 clean:
+					@rm -rf $(OBJ)
+					@rm -rf $(OBJ_MAIN)
+					@rm -rf $(OBJ_BONUS)
 					@make -C $(LIBFT_PATH) clean
 					@make -C $(MINILIBX_PATH) clean
 

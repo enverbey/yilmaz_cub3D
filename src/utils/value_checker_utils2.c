@@ -6,7 +6,7 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:19:38 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/12 20:37:56 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:46:53 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,14 @@ int	is_rgb_format(char *s)
 	if (s[i] == '\0' || s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		return (1);
 	return (0);
+}
+
+int	check_height_map(void)
+{
+	static int	i = 0;
+
+	i++;
+	if (i <= 51)
+		return (0);
+	return (1);
 }

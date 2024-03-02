@@ -6,7 +6,7 @@
 /*   By: envyilma <envyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:45:25 by envyilma          #+#    #+#             */
-/*   Updated: 2024/02/12 20:17:31 by envyilma         ###   ########.fr       */
+/*   Updated: 2024/02/23 09:11:23 by envyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void
 }
 
 static void
-	ffunction2(t_program *program, int x, int y, int j2)
+	ffunction2(t_program *program, int x, int y)
 {
 	int	limit_i;
 	int	i;
@@ -100,7 +100,6 @@ static void
 		if (i >= program->map->length)
 			break ;
 		j = x;
-		j2 = 0;
 		ffunction3(program, i, i2, j);
 		i2++;
 		i++;
@@ -113,7 +112,6 @@ void	set_bonus_map(t_program *program)
 	int	player_y;
 	int	x;
 	int	y;
-	int	j2;
 
 	player_x = 2;
 	player_y = 2;
@@ -130,7 +128,7 @@ void	set_bonus_map(t_program *program)
 		player_y = 1;
 	}
 	init_bonus_map(&program->bonus_map, 5, 5);
-	ffunction2(program, x, y, j2);
+	ffunction2(program, x, y);
 	program->bonus_map.map[player_y][player_x] = 'P';
 	ffunction(program, player_y, player_x);
 }
